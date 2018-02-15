@@ -1,0 +1,11 @@
+<h1>Let the games begin!</h1>
+
+<h2>Your string of characters is:</h2>
+<h2><%= @string_of_characters %> </h2>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :token, @string_of_characters %>
+  <input type="text" name="answer" placeholder="Your longest word goes here.">
+  <input type="submit">
+</form>
